@@ -25,3 +25,23 @@ int main() {
     }
     return 0;
 }
+
+//----------------------------------------------------------------  ----------------------------------------------------------------
+
+//runtime 0ms
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x < 0)
+        return false;
+        
+        long long ltemp = x; //long long is used here for overflow protection
+        long long lVal = 0;
+        while(ltemp!=0){
+            lVal = (lVal * 10) + (ltemp % 10);
+            ltemp = ltemp / 10;
+        }
+        return (lVal == x);
+    }
+};
